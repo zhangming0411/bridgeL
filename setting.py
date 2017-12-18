@@ -5,9 +5,19 @@ import os
 
 
 class Config(object):
-    DEBUG = True
+    # DEBUG = True
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'I am the secret of bridge.'
 
     @staticmethod
     def init_app(app):
         pass
+
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+
+
+config = {
+    'development': DevelopmentConfig,
+    'default': DevelopmentConfig,
+}
