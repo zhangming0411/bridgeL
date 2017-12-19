@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block page_content %}
-
+<ul class="list-group">
 {% for filename in file_list%}
-<a href="{{ url_for('main.showone', name=filename.path_to_father)}}">{{ filename.name }}</a>
+    <a class="list-group-item" href="{{ url_for('main.showone', name=filename.path_to_father)}}">{{ filename.name }}</a>
 {% endfor %}
+</ul>
 
 {% endblock %}
