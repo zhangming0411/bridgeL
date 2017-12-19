@@ -5,8 +5,8 @@ import os
 
 
 class Config(object):
-    # DEBUG = True
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'I am the secret of bridge.'
+    FILE_DIR = '/Users/zhangming/resources'
 
     @staticmethod
     def init_app(app):

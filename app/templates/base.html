@@ -1,0 +1,30 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}BridgeL{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse container">
+        <div class="navbar-header"> <a class="navbar-brand" href="{{ url_for('main.index') }}">BridgeL</a> </div>
+        <ul class="nav navbar-nav pull-right">
+                <li><a class="btn" href="{{ url_for('main.showfiles') }}">文件下载</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <!-- flash message -->
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">close</span></button>
+            {{ message }}
+        </div>
+        {% endfor %}
+
+        <!-- body block -->
+        {% block page_content %} {% endblock %}
+    </div>
+{% endblock %}
+

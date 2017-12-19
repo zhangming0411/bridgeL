@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
 {% block page_content %}
-<p> Welcome to BridgeL!</p>
+
+{% for filename in file_list%}
+    {{ filename }}
+{% endfor %}
+
 {% endblock %}
