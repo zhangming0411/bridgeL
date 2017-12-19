@@ -3,7 +3,7 @@
 {% block page_content %}
 
 {% for filename in file_list%}
-    {{ filename }}
+<a href="{{ url_for('main.showone', name=filename.path_to_father)}}">{{ filename.name }}</a>
 {% endfor %}
 
 {% endblock %}
