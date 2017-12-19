@@ -1,13 +1,12 @@
 # coding:utf-8
 import os
-from flask import current_app, render_template, flash, send_file
+from flask import current_app, render_template, redirect, url_for, flash, send_file
 from . import main
 from utils import is_folder, Ofile
 
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
-    flash(u'测试下flash')
     return render_template('index.html')
 
 
@@ -17,7 +16,6 @@ def showone(name):
     fpath = current_app.config['FILE_DIR']
     full_path = os.path.join(fpath, name)
     if not is_folder(full_path):
-        flash(u'文件已下载！')
         return send_file(full_path)
     file_list = []
     file_names = os.listdir(full_path)

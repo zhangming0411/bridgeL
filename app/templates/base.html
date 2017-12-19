@@ -2,6 +2,10 @@
 
 {% block title %}BridgeL{% endblock %}
 
+{% block head %}
+<link rel="icon" href="{{ url_for('static', filename='sanguo.png') }}" type="image/x-icon">
+{% endblock %}
+
 {% block navbar %}
     <nav class="navbar navbar-inverse container">
         <div class="navbar-header"> <a class="navbar-brand" href="{{ url_for('main.index') }}">BridgeL</a> </div>
