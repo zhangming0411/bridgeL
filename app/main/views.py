@@ -1,8 +1,12 @@
-# coding:utf-8
+#!/usr/bin/env python
+# coding: utf-8
+
 import os
 from flask import current_app, render_template, redirect, url_for, flash, send_file
 from . import main
 from utils import is_folder, Ofile
+from .. import db
+from .models import *
 
 
 @main.route('/', methods=['GET', 'POST'])
@@ -24,3 +28,8 @@ def showone(name):
         file_list.append(fo)
     return render_template('showfiles.html', file_list=file_list)
 
+
+@main.route('/projects', methods=['GET', 'POST'])
+def projects():
+    db
+    return render_template('projects.html')
